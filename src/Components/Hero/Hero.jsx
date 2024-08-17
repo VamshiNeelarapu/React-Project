@@ -21,8 +21,10 @@ const Hero = () => {
         </Carousel.Item>
       </Carousel>
       <div className="hero-message">
-        <div className="welcome">UPGRADE YOUR FASHION</div>
-        <div className="subtext">Find your perfect fit today</div>
+        <div className="welcome">DISCOVER YOUR UNIQUE STYLE</div>
+        <div className="subtext">
+          Explore the latest trends and find your perfect look with GlamCart
+        </div>
         <button className="btn-4">
           <span>Shop Now</span>
         </button>

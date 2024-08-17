@@ -8,7 +8,7 @@ const Popular = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const getProducts = async () => {
-      let response = await axios.get("http://localhost:8000/products");
+      let response = await axios.get("http://localhost:5000/products");
       setProducts(response.data);
     };
     getProducts();

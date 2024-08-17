@@ -3,11 +3,20 @@ import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MenuContext from "../../Context/MenuContext";
+import AuthContext from "../../Context/AuthContext";
 
 const Navbar = () => {
   const { selectedMenu, setSelectedMenu } = useContext(MenuContext);
+  const { isAuthenticated, user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -86,9 +95,16 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav-login-cart">
-        <NavLink to="/login">
-          <button>Login</button>
-        </NavLink>
+        {isAuthenticated ? (
+          <div className="user-context-container">
+            <span className="user-context-msg">Welcome, {user.name}</span>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : (
+          <NavLink to="/login">
+            <button>Login</button>
+          </NavLink>
+        )}
 
         <NavLink
           style={({ isActive }) => {

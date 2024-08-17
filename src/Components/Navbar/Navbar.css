@@ -6,6 +6,10 @@
   color: white;
   padding: 10px 30px 10px 10px !important;
   margin: 0;
+  position: sticky !important;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
 }
 
 .nav-menu {
@@ -63,6 +67,18 @@
 .nav-login-cart button:active {
   background-color: rgb(252, 68, 160);
   transition: 0.3s;
+}
+
+.user-context-msg {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(240, 188, 92);
+}
+
+.user-context-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-cart-count {

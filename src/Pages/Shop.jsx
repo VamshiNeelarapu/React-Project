@@ -6,6 +6,8 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Categories from "../Components/Categories/Categories";
 import banner_image_1 from "../Images/pexels-pixabay-157886.jpg";
 import banner_image_2 from "../Images/pexels-olly-845434.jpg";
+import Trending from "../Components/HomePageSections/Trending";
+import SpecialOffers from "../Components/HomePageSections/SpecialOffers";
 
 const Shop = () => {
   const banner_popular = {
@@ -37,13 +39,15 @@ const Shop = () => {
         <Banner
           image={banner_image_2}
           style={banner_offer}
-          section="POPULAR "
+          section="TRENDING"
         />
+        <Trending />
         <Banner
           image={banner_image_1}
           style={banner_popular}
           section="SPECIAL OFFER"
         />
+        <SpecialOffers />
       </ParallaxProvider>
     </div>
   );
