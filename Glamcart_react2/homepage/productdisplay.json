@@ -1,0 +1,169 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "image":"./projectimages/1.jpg",
+        "title":"Belted denim Halter",
+        "MRP": "5490/-",
+        "Price": "4599/-",
+        "Category": "women",
+        "Company": "Zara",
+        "Description": "pink skirt,skirt,women,denim"
+      },
+      {
+        "id": "2",
+        "image":"../projectimages/2.jpg",
+        "title":"Asymmetric Denim Skirt",
+        "MRP": "4290/-",
+        "Price": "3999/-",
+        "Category": "women",
+        "Company": "H&M",
+        "Description": "white skirt,women,denim"
+      },
+      {
+        "id": "3",
+        "image":"../projectimages/3.jpg",
+        "title":"Jumpsuit",
+        "MRP": "5690/-",
+        "Price": "4999/-",
+        "Category": "women",
+        "Company": "Zara",
+        "Description": "jumpsuit,red jumpsuit,women"
+      },
+      {
+        "id": "4",
+        "image":"../projectimages/4.jpg",
+        "title":"Brown bodycon dress ",
+        "MRP": "6029/-",
+        "Price": "5899/-",
+        "Category": "women",
+        "Company": "H&M",
+        "Description": "women, bodycon "
+      },
+      {
+        "id": "5",
+        "image":"../projectimages/5.jpg",
+        "title":"Blue dress",
+        "MRP": "5789/-",
+        "Price": "4999/-",
+        "Category": "women",
+        "Company": "Zara",
+        "Description": "dress,women"
+      },
+      {
+        "id": "6",
+        "image":"../projectimages/6.jpg",
+        "title":"Color block dress",
+        "MRP": "7859/-",
+        "Price": "6999/-",
+        "Category": "women",
+        "Company": "H&M",
+        "Description": "dress,women,h&m"
+      },
+      {
+        "id": "7",
+        "image":"../projectimages/7.jpg",
+        "title":"Black v-neck dress",
+        "MRP": "7899/-",
+        "Price": "6999/-",
+        "Category": "women",
+        "Company": "Zara",
+        "Description": "dress,women"
+      }
+      ,{
+        "id": "8",
+        "image":"../projectimages/8.jpg",
+        "title":"Red Dress",
+        "MRP": "8699/-",
+        "Price": "7999/-",
+        "Category": "women",
+        "Company": "Zara",
+
+        "Description": "women,frock,dress,red"
+      },
+      {
+        "id": "9",
+        "image":"../projectimages/9.jpg",
+        "title":"Openwork Knitted Top",
+        "MRP": "8799/-",
+        "Price": "8499/-",
+        "Category": "women",
+        "Company": "H&M",
+        "Description": "women,tops,white"
+      }
+      ,{
+        "id": "10",
+        "image":"../projectimages/10.jpg",
+        "title":"Open-back Tank Top",
+        "MRP": "6789/-",
+        "Price": "5899/-",
+        "Category": "women",
+        "Company": "Zara",
+        "Description": "women,tank top, dress"
+      }
+      ,{
+        "id": "11",
+        "image":"../projectimages/11.jpg",
+        "title":"Men's White Levis T-shirt",
+        "MRP": "2690/-",
+        "Price": "1999/-",
+        "Category": "men",
+        "Company": "Levis",
+        "Description": "men,T-shirt"
+      },
+      {
+        "id": "12",
+        "image":"../projectimages/12.jpg",
+        "title":"Men's Black Adidas T-shirt",
+        "MRP": "3999/-",
+        "Price": "2589/-",
+        "Category": "men",
+        "Company": "Adidas",
+        "Description": "men,T-shirt,Adidas"
+      },
+      {
+        "id": "13",
+        "image":"../projectimages/13.jpg",
+        "title":"T-shirt",
+        "MRP": "4899/-",
+        "Price": "4599/-",
+        "Category": "men",
+        "Company": "Adidas",
+        "Description": "men,T-shirt,Adidas"
+      },
+      {
+        "id": "14",
+        "image":"../projectimages/14.jpg",
+        "title":"Men's Peach T-shirt",
+        "MRP": "4599/-",
+        "Price": "3999/-",
+        "Category": "men",
+        "Company": "Levis",
+        "Description": "men, t-shirt, Peach,Levis"
+      },
+      {
+        "id": "15",
+        "image":"../projectimages/15.jpg",
+        "title":"Hand-Knitted Men's Shirt",
+        "MRP": "7899/-",
+        "Price": "5699/-",
+        "Category": "men",
+        "Company": "Levis",
+        "Description": "men,shirt,Hand-knitted"
+      },
+      {
+        "id": "16",
+        "image":"../projectimages/16.jpg",
+        "title":"Men's T-shirt",
+        "MRP": "4569/-",
+        "Price": "4299/-",
+        "Category": "men",
+        "Company": "Adidas",
+        "Description": "men,T-shirt"
+      }
+
+
+    ]
+
+
+  }

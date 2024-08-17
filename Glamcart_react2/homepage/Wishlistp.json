@@ -1,0 +1,24 @@
+{
+  "wish": [
+    {
+      "id": "3",
+      "image": "../projectimages/3.jpg",
+      "title": "Jumpsuit",
+      "MRP": "5690/-",
+      "Price": "4999/-",
+      "Category": "women",
+      "Company": "Zara",
+      "Description": "jumpsuit,red jumpsuit,women"
+    },
+    {
+      "id": "1",
+      "image": "./projectimages/1.jpg",
+      "title": "Belted denim Halter",
+      "MRP": "5490/-",
+      "Price": "4599/-",
+      "Category": "women",
+      "Company": "Zara",
+      "Description": "pink skirt,skirt,women,denim"
+    }
+  ]
+}

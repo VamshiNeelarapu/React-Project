@@ -1,0 +1,33 @@
+
+.product-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+   /*  flex-direction: row; */
+}
+.card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* .button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+#buttons{
+    border-radius: 5px;
+    font-size: 16px;
+  font-weight:bold;
+    color: black;
+
+  background: linear-gradient(to right, black 50%, rgb(240, 79, 106) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 1s ease-out;
+
+}
+#buttons:hover{
+    color: white;
+  background-position: left bottom;
+}
