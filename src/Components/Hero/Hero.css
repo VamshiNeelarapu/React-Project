@@ -1,0 +1,39 @@
+.hero {
+  position: relative;
+  color: white;
+}
+
+.hero-message {
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  top: 184px;
+  left: 114px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 1;
+}
+
+.hero-message .welcome {
+  font-weight: bolder;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.hero-message .subtext {
+  flex: 1;
+  font-size: 1.2rem;
+}
+
+.hero-message button {
+  justify-self: end;
+  outline: none;
+  border: none;
+  background-color: orange;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  padding: 3px 10px;
+}
