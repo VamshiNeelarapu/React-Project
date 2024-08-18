@@ -123,7 +123,7 @@ const Navbar = () => {
             style={({ isActive }) => {
               return {
                 textDecoration: isActive ? "none" : "none",
-                color: isActive ? "Hotpink" : "white",
+                color: isActive ? "hotpink" : "white",
               };
             }}
             to="/cart"

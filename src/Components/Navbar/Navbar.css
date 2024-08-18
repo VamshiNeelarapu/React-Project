@@ -94,6 +94,7 @@
   font-size: 0.8rem;
   position: relative;
   z-index: 999;
+  color: white !important;
 }
 
 @keyframes expand {
