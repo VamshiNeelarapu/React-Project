@@ -23,7 +23,7 @@ function Login() {
         wishlist: [],
       };
       try {
-        const res = await axios.post("http://localhost:3001/users", user);
+        const res = await axios.post("http://localhost:9000/users", user);
         console.log(res);
         if (res.status === 201) {
           // Save user to local storage
@@ -35,7 +35,7 @@ function Login() {
       } catch (error) {
         setError("Signup failed. Please try again.");
       }
-      const res = await axios.post("http://localhost:3001/users", user);
+      const res = await axios.post("http://localhost:9000/users", user);
     } else {
       setError("All fields are required.");
     }
@@ -46,7 +46,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/users");
+      const res = await axios.get("http://localhost:9000/users");
       const users = res.data;
       console.log("Users from server:", users);
 

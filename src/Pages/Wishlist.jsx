@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AuthContext from "../Context/AuthContext";
+import Wish from "../Components/Wish/Wish";
 
 const Wishlist = () => {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -8,7 +9,10 @@ const Wishlist = () => {
       {!isAuthenticated ? (
         <h1>Sign in to view your wishlist!</h1>
       ) : (
-        <h1> {user.name} Wishlist</h1>
+        <div>
+          {/* <h1> {user.name} Wishlist</h1> */}
+          <Wish />
+        </div>
       )}
     </div>
   );

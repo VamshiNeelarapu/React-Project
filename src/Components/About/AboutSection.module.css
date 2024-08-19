@@ -1,0 +1,28 @@
+.about-header {
+  display: flex;
+}
+
+.content {
+  background-color: black;
+  color: white;
+  text-align: start;
+}
+
+.about-section {
+  display: flex;
+  gap: 30px;
+  padding: 20px 40px;
+  background-color: #000000;
+  color: rgb(191, 191, 191);
+  align-items: center;
+}
+
+.about-section img {
+  height: 500px;
+  margin-right: 40px;
+  border-radius: 30px;
+}
+
+.about-section .content {
+  text-align: justify;
+}

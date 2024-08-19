@@ -8,7 +8,7 @@ const Popular = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const getProducts = async () => {
-      let response = await axios.get("http://localhost:5000/products");
+      let response = await axios.get("http://localhost:9000/popular");
       setProducts(response.data);
     };
     getProducts();
@@ -23,11 +23,9 @@ const Popular = () => {
           return (
             <Item
               key={index}
+              image={item.image}
               title={item.title}
-              description={item.description}
-              mrp={item.MRP}
-              price={item.price}
-              discount={item.discount}
+              // description={item.description}
             />
           );
         })}

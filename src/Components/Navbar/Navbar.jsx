@@ -47,11 +47,11 @@ const Navbar = () => {
             }}
             to="/mens"
           >
-            Mens
+            Products
           </NavLink>
           {selectedMenu === "Men" ? <hr /> : ""}
         </li>
-        <li onClick={() => setSelectedMenu("Women")}>
+        {/* <li onClick={() => setSelectedMenu("Women")}>
           <NavLink
             style={({ isActive }) => {
               return {
@@ -78,7 +78,7 @@ const Navbar = () => {
             Accessories
           </NavLink>
           {selectedMenu === "Accessories" ? <hr /> : ""}
-        </li>
+        </li> */}
         <li onClick={() => setSelectedMenu("About")}>
           <NavLink
             style={({ isActive }) => {
@@ -123,13 +123,13 @@ const Navbar = () => {
             style={({ isActive }) => {
               return {
                 textDecoration: isActive ? "none" : "none",
-                color: isActive ? "Hotpink" : "white",
+                color: isActive ? "hotpink" : "white",
               };
             }}
             to="/cart"
           >
             <FontAwesomeIcon icon={faCartShopping} />
-            <div className="nav-cart-count">0</div>
+            {/* <div className="nav-cart-count">0</div> */}
           </NavLink>
         </div>
       </div>

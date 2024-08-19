@@ -13,6 +13,8 @@ import Wishlist from "./Pages/Wishlist";
 import MenuContextProvider from "./Context/MenuContextProvider";
 import About from "./Pages/About";
 import AuthContext, { AuthProvider } from "./Context/AuthContext";
+import Checkout from "./Pages/Checkout";
+import FinalCheck from "./Pages/FinalCheck";
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<LoginSignUp />} />
               <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/finalcheckout" element={<FinalCheck />} />
             </Routes>
             <Newsletter />
             <Footer />
