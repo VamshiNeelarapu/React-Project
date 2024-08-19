@@ -71,34 +71,34 @@ function Login() {
     }
   };
 
-  const addToWishlist = (item) => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (currentUser) {
-      currentUser.wishlist.push(item);
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
-      updateUserInLocalStorage(currentUser);
-    }
-  };
+  // const addToWishlist = (item) => {
+  //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  //   if (currentUser) {
+  //     currentUser.wishlist.push(item);
+  //     localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  //     updateUserInLocalStorage(currentUser);
+  //   }
+  // };
 
-  const addToCart = (item) => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (currentUser) {
-      currentUser.cart.push(item);
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
-      updateUserInLocalStorage(currentUser);
-    }
-  };
+  // const addToCart = (item) => {
+  //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  //   if (currentUser) {
+  //     currentUser.cart.push(item);
+  //     localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  //     updateUserInLocalStorage(currentUser);
+  //   }
+  // };
 
-  const updateUserInLocalStorage = (updatedUser) => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const userIndex = users.findIndex(
-      (user) => user.email === updatedUser.email
-    );
-    if (userIndex !== -1) {
-      users[userIndex] = updatedUser;
-      localStorage.setItem("users", JSON.stringify(users));
-    }
-  };
+  // const updateUserInLocalStorage = (updatedUser) => {
+  //   const users = JSON.parse(localStorage.getItem("users")) || [];
+  //   const userIndex = users.findIndex(
+  //     (user) => user.email === updatedUser.email
+  //   );
+  //   if (userIndex !== -1) {
+  //     users[userIndex] = updatedUser;
+  //     localStorage.setItem("users", JSON.stringify(users));
+  //   }
+  // };
 
   return (
     <div className={styles["loginsignup"]}>
