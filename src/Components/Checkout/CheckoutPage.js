@@ -1,10 +1,28 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./CheckoutPage.css";
 import AuthContext from "../../Context/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const CheckputPage = () => {
+  useEffect(() => emailjs.init("mPFtXQc-UiuyL4x6x"), []);
+
+  const sendEmail = async (e) => {
+    // e.preventDefault();
+    const serviceId = "service_2wyrr6e";
+    const templateId = "template_uhv2s4x";
+    try {
+      await emailjs.send(serviceId, templateId, {
+        username: "Varun",
+        price: "6000",
+        id: "200010",
+      });
+      alert("email successfully sent check inbox");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const { isAuthenticated, user } = useContext(AuthContext);
   const [name, setname] = useState([user.name]);
   const [paymentForm, setPaymentForm] = useState({
@@ -185,7 +203,14 @@ const CheckputPage = () => {
             )}
           </div>
           <Link to="/finalcheckout">
-            <button type="submit" id="paymentbtn" onClick={() => onClick()}>
+            <button
+              type="submit"
+              id="paymentbtn"
+              onClick={(e) => {
+                onClick();
+                sendEmail(e);
+              }}
+            >
               Proceed To Pay
             </button>
           </Link>

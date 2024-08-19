@@ -1,5 +1,6 @@
 import React from "react";
 import "./FinalCheck.css";
+import emailjs from "@emailjs/browser";
 
 function finalCheckout() {
   return (
