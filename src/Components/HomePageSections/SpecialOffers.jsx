@@ -5,15 +5,14 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import styles from "./Trending.module.css";
 import AuthContext from "../../Context/AuthContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const SpecialOffers = () => {
   const [productarray, setproductarray] = useState([]);
   const [error, seterror] = useState("");
   const [cart, setCart] = useState([]);
-  const [wish, setWishlist] = useState([]);
 
   const { isAuthenticated, user } = useContext(AuthContext);
-  const [name, setname] = useState([user.name]);
   useEffect(() => {
     axios
       .get(`http://localhost:9000/special`)
@@ -23,69 +22,83 @@ const SpecialOffers = () => {
       .catch((error) => seterror(error.message));
     console.log("yes");
   }, []);
+
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
   const onAddWishlist = (product) => {
-    console.log(name);
     let flag = false;
 
-    if (name != "") {
-      console.log("VALID");
+    if (isAuthenticated && user && user.name) {
+      axios
+        .get(`http://localhost:9000/users?name=${user.name}`)
+        .then((user) => {
+          user.data[0].wishlist.forEach((item) => {
+            if (item.id === product.id) {
+              flag = true;
+              return;
+            }
+          });
 
-      axios.get(`http://localhost:9000/users?name=${name}`).then((user) => {
-        user.data[0].wishlist.forEach((item) => {
-          if (item.id === product.id) {
-            flag = true;
-            return;
+          if (flag === false) {
+            user.data[0].wishlist.push(product);
+
+            axios
+              .put(
+                `http://localhost:9000/users/${user.data[0].id}`,
+                user.data[0]
+              )
+              .then(
+                console.log(user.data[0].wishlist),
+                toast.success("Wishlisted Successfully!")
+              );
+          } else {
+            toast.error("Already Added");
           }
         });
-
-        if (flag === false) {
-          user.data[0].wishlist.push(product);
-
-          axios
-            .put(`http://localhost:9000/users/${user.data[0].id}`, user.data[0])
-            .then(
-              console.log(user.data[0].wishlist),
-              alert("Wishlisted Successfully!")
-            );
-        } else {
-          alert("Already Added");
-        }
-      });
+    } else {
+      toast.error("Log in to add to wishlist");
     }
   };
+
   const onAddCartlist = (product) => {
-    console.log(name);
     let flag = false;
 
-    if (name != "") {
-      console.log("VALID");
+    if (isAuthenticated && user && user.name) {
+      axios
+        .get(`http://localhost:9000/users?name=${user.name}`)
+        .then((user) => {
+          user.data[0].cart.forEach((item) => {
+            if (item.id === product.id) {
+              flag = true;
+              return;
+            }
+          });
 
-      axios.get(`http://localhost:9000/users?name=${name}`).then((user) => {
-        user.data[0].cart.forEach((item) => {
-          if (item.id === product.id) {
-            flag = true;
-            return;
+          if (flag === false) {
+            user.data[0].cart.push(product);
+
+            axios
+              .put(
+                `http://localhost:9000/users/${user.data[0].id}`,
+                user.data[0]
+              )
+              .then(
+                console.log(user.data[0].cart),
+                toast.success("Added to Cart!")
+              );
+          } else {
+            toast.error("Already Added to cart!");
           }
         });
-
-        if (flag === false) {
-          user.data[0].cart.push(product);
-
-          axios
-            .put(`http://localhost:9000/users/${user.data[0].id}`, user.data[0])
-            .then(console.log(user.data[0].cart), alert("Added to Cart!"));
-        } else {
-          alert("Already Added");
-        }
-      });
+    } else {
+      toast.error("Log in to add to cart!");
     }
   };
 
   return (
     <div>
+      <Toaster />
       <div id={styles["trend_head"]}>
         <h1 style={{ fontFamily: "serif", fontWeight: "bolder" }}>
           <img id={styles["trend_img"]} src="fire 1.gif" /> Special Offers

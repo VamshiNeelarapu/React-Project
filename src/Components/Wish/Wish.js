@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import "./Wish.css";
 import axios from "axios";
 import AuthContext from "../../Context/AuthContext";
+import toast, { Toaster } from "react-hot-toast";
 
 function Wish() {
   const [productarray, setproductarray] = useState([]);
@@ -52,14 +53,14 @@ function Wish() {
 
           await axios.put(`http://localhost:9000/users/${user.id}`, user);
           console.log("Wishlist after update:", user.wishlist);
-          alert("Success!");
+          toast.success("Success!");
           setproductarray([...wishlist]); // Update state with new wishlist
         } else {
-          alert("No item!");
+          toast.error("No item!");
         }
       } catch (error) {
         console.error("Error updating wishlist:", error);
-        alert("Error updating wishlist");
+        toast.error("Error updating wishlist");
       }
     }
   };
@@ -88,9 +89,12 @@ function Wish() {
                 `http://localhost:9000/users/${user.data[0].id}`,
                 user.data[0]
               )
-              .then(console.log(user.data[0].cart), alert("Added to Cart!"));
+              .then(
+                console.log(user.data[0].cart),
+                toast.success("Added to Cart!")
+              );
           } else {
-            alert("Already Added");
+            toast.error("Already Added");
           }
         });
     }
@@ -98,6 +102,22 @@ function Wish() {
 
   return (
     <div>
+      <Toaster
+        toastOptions={{
+          success: {
+            iconTheme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "red",
+              secondary: "black",
+            },
+          },
+        }}
+      />
       <div className="title">
         <img className="wishtitle" src="wish2 2.webp" alt="Wishlist Title" />
       </div>

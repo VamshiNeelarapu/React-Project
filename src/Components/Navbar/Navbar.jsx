@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,7 @@ import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
 import MenuContext from "../../Context/MenuContext";
 import AuthContext from "../../Context/AuthContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
   const { selectedMenu, setSelectedMenu } = useContext(MenuContext);
@@ -16,9 +17,14 @@ const Navbar = () => {
     logout();
     navigate("/login");
   };
+  let cartlen = 0;
 
+  if (isAuthenticated && user && user.name) {
+    cartlen = user.cart.length;
+  }
   return (
     <div className="navbar">
+      <Toaster />
       <div className="nav-logo">
         <img src={logo} alt="" width="150px" />
       </div>
@@ -98,7 +104,14 @@ const Navbar = () => {
         {isAuthenticated ? (
           <div className="user-context-container">
             <span className="user-context-msg">Welcome, {user.name}</span>
-            <button onClick={handleLogout}>Logout</button>
+            <button
+              onClick={() => {
+                handleLogout();
+                toast.success("Logged out successfully!");
+              }}
+            >
+              Logout
+            </button>
           </div>
         ) : (
           <NavLink to="/login">
@@ -129,7 +142,7 @@ const Navbar = () => {
             to="/cart"
           >
             <FontAwesomeIcon icon={faCartShopping} />
-            {/* <div className="nav-cart-count">0</div> */}
+            <div className="nav-cart-count">{cartlen}</div>
           </NavLink>
         </div>
       </div>

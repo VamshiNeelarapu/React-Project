@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FinalCheck.css";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
-function finalCheckout() {
+const FinalCheckout = () => {
+  useEffect(() => {
+    toast.success("Confirmation mail sent!");
+  });
   return (
     <div
       style={{
@@ -11,10 +15,11 @@ function finalCheckout() {
         paddingBottom: "30px",
       }}
     >
+      <Toaster />
       <img src="green-tick.gif" className="finalTick" />
       <h3>Thank you! Your order is placed!</h3>
     </div>
   );
-}
+};
 
-export default finalCheckout;
+export default FinalCheckout;

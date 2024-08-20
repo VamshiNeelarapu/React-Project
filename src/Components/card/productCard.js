@@ -3,14 +3,13 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import AuthContext from "../../Context/AuthContext";
+import toast, { Toaster } from "react-hot-toast";
 
 function Card({ loadProducts, data }) {
   useEffect(() => {
     loadProducts();
-    console.log("yes");
-  }, [loadProducts]);
+  }, []);
 
-  const [wishItem, setWishItem] = useState([]);
   const [cart, setCart] = useState([]);
   const [test, setTest] = useState();
 
@@ -55,14 +54,14 @@ function Card({ loadProducts, data }) {
               .put(`http://localhost:9000/users/${userData.id}`, userData)
               .then(() => {
                 console.log(userData.wishlist);
-                alert("Wishlisted Successfully!");
+                toast.success("Wishlisted Successfully!");
               });
           } else {
-            alert("Already Added");
+            toast.error("Already Added");
           }
         });
     } else {
-      alert("Please log in to add items to your wishlist.");
+      toast.error("Log in to add items to your wishlist.");
     }
   };
 
@@ -90,19 +89,35 @@ function Card({ loadProducts, data }) {
               .put(`http://localhost:9000/users/${userData.id}`, userData)
               .then(() => {
                 console.log(userData.cart);
-                alert("Added to Cart!");
+                toast.success("Added to Cart!");
               });
           } else {
-            alert("Already Added");
+            toast.error("Already Added");
           }
         });
     } else {
-      alert("Please log in to add items to your cart.");
+      toast.error("Log in to add items to your cart.");
     }
   };
 
   return (
     <div className="card-container">
+      <Toaster
+        toastOptions={{
+          success: {
+            iconTheme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "red",
+              secondary: "black",
+            },
+          },
+        }}
+      />
       {data.length === 0 ? (
         <h2>Search results not found...</h2>
       ) : (

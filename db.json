@@ -321,8 +321,87 @@
       "name": "Suhas",
       "email": "suhas@gmail.com",
       "password": "12345",
-      "cart": [],
-      "wishlist": []
+      "cart": [
+        {
+          "id": "6",
+          "image": "./assets/6 1.jpg",
+          "title": "Color block dress",
+          "MRP": "7859",
+          "Price": "6999",
+          "Category": "women",
+          "quantity": 2,
+          "Company": "H&M",
+          "Description": "dress, women, h&m"
+        },
+        {
+          "id": "15",
+          "image": "./assets/15 1.jpg",
+          "title": "Hand-Knitted Men's Shirt",
+          "MRP": "7899",
+          "Price": "5699",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Levis",
+          "Description": "men,shirt,Hand-knitted,levis"
+        },
+        {
+          "id": "2",
+          "image": "./assets/2 1.jpg",
+          "title": "Asymmetric Buttoned Denim Straight Skirt",
+          "MRP": "4290",
+          "Price": "3999",
+          "Category": "women",
+          "quantity": 1,
+          "Company": "H&M",
+          "Description": "white skirt, women, denim, H&M"
+        },
+        {
+          "id": "5",
+          "image": "./assets/5 1.jpg",
+          "title": "Blue dress",
+          "MRP": "5789",
+          "Price": "4999",
+          "Category": "women",
+          "quantity": 1,
+          "Company": "Zara",
+          "Description": "dress, women, zara"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "6",
+          "image": "./assets/6 1.jpg",
+          "title": "Color block dress",
+          "MRP": "7859",
+          "Price": "6999",
+          "Category": "women",
+          "quantity": 1,
+          "Company": "H&M",
+          "Description": "dress, women, h&m"
+        },
+        {
+          "id": "15",
+          "image": "./assets/15 1.jpg",
+          "title": "Hand-Knitted Men's Shirt",
+          "MRP": "7899",
+          "Price": "5699",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Levis",
+          "Description": "men,shirt,Hand-knitted,levis"
+        },
+        {
+          "id": "2",
+          "image": "./assets/2 1.jpg",
+          "title": "Asymmetric Buttoned Denim Straight Skirt",
+          "MRP": "4290",
+          "Price": "3999",
+          "Category": "women",
+          "quantity": 1,
+          "Company": "H&M",
+          "Description": "white skirt, women, denim, H&M"
+        }
+      ]
     },
     {
       "id": "977b",

@@ -4,7 +4,7 @@ import styles from "./CartPage.module.css";
 import AuthContext from "../../Context/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import toast, { Toaster } from "react-hot-toast";
 const CartPage = () => {
   const [products, setProducts] = useState([]);
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -136,10 +136,10 @@ const CartPage = () => {
             .put(`http://localhost:9000/users/${user.data[0].id}`, user.data[0])
             .then(
               console.log(user.data[0].wishlist),
-              alert("Wishlisted Successfully!")
+              toast.success("Wishlisted Successfully!")
             );
         } else {
-          alert("Already Added");
+          toast.error("Already Added");
         }
       });
     }
