@@ -1,0 +1,12 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "main": "Products.js",
+  "scripts": {
+    "start": "json-server --watch ProductDB.json --port=5000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
