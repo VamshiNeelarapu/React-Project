@@ -1,29 +1,25 @@
 import "./productCard.css";
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { FaHeart } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import AuthContext from "../../Context/AuthContext";
 
 function Card({ loadProducts, data }) {
   useEffect(() => {
     loadProducts();
     console.log("yes");
-  }, []);
+  }, [loadProducts]);
 
-  // const user = "Vamshi";
   const [wishItem, setWishItem] = useState([]);
   const [cart, setCart] = useState([]);
   const [test, setTest] = useState();
 
   const { isAuthenticated, user } = useContext(AuthContext);
-  const [name, setname] = useState([user.name]);
 
   const addToCart = (item) => {
     let flag = false;
     cart.forEach((response) => {
-      if (response.id == item.id) flag = true;
+      if (response.id === item.id) flag = true;
     });
     if (flag) return;
 
@@ -36,70 +32,72 @@ function Card({ loadProducts, data }) {
   };
 
   const onAddWishlist = (product) => {
-    // console.log(name);
     let flag = false;
 
-    if (user.name != "") {
+    if (isAuthenticated && user && user.name) {
       console.log("VALID");
 
       axios
         .get(`http://localhost:9000/users?name=${user.name}`)
-        .then((user) => {
-          user.data[0].wishlist.forEach((item) => {
+        .then((response) => {
+          const userData = response.data[0];
+          userData.wishlist.forEach((item) => {
             if (item.id === product.id) {
               flag = true;
               return;
             }
           });
 
-          if (flag === false) {
-            user.data[0].wishlist.push(product);
+          if (!flag) {
+            userData.wishlist.push(product);
 
             axios
-              .put(
-                `http://localhost:9000/users/${user.data[0].id}`,
-                user.data[0]
-              )
-              .then(
-                console.log(user.data[0].wishlist),
-                alert("Wishlisted Successfully!")
-              );
+              .put(`http://localhost:9000/users/${userData.id}`, userData)
+              .then(() => {
+                console.log(userData.wishlist);
+                alert("Wishlisted Successfully!");
+              });
           } else {
             alert("Already Added");
           }
         });
+    } else {
+      alert("Please log in to add items to your wishlist.");
     }
   };
+
   const onAddCartlist = (product) => {
-    // console.log(name);
     let flag = false;
 
-    if (user.name != "") {
+    if (isAuthenticated && user && user.name) {
       console.log("VALID");
 
       axios
         .get(`http://localhost:9000/users?name=${user.name}`)
-        .then((user) => {
-          user.data[0].cart.forEach((item) => {
+        .then((response) => {
+          const userData = response.data[0];
+          userData.cart.forEach((item) => {
             if (item.id === product.id) {
               flag = true;
               return;
             }
           });
 
-          if (flag === false) {
-            user.data[0].cart.push(product);
+          if (!flag) {
+            userData.cart.push(product);
 
             axios
-              .put(
-                `http://localhost:9000/users/${user.data[0].id}`,
-                user.data[0]
-              )
-              .then(console.log(user.data[0].cart), alert("Added to Cart!"));
+              .put(`http://localhost:9000/users/${userData.id}`, userData)
+              .then(() => {
+                console.log(userData.cart);
+                alert("Added to Cart!");
+              });
           } else {
             alert("Already Added");
           }
         });
+    } else {
+      alert("Please log in to add items to your cart.");
     }
   };
 
@@ -108,32 +106,30 @@ function Card({ loadProducts, data }) {
       {data.length === 0 ? (
         <h2>Search results not found...</h2>
       ) : (
-        data.map((item, index) => {
-          return (
-            <div key={index} className="card proCard">
-              <img className="proImage" src={item.image} alt="Product Image" />
-              <div className="rating">
-                <FaStar className="activeStar" />
-                <FaStar className="activeStar" />
-                <FaStar className="activeStar" />
-                <FaStar className="activeStar" />
-                <FaStar className="inactiveStar" />
-              </div>
-              <p className="proCompany">{item.Company}</p>
-              <p className="proTitle">{item.title}</p>
-              <div className="proPrice">
-                <sup>₹ </sup>
-                {item.Price} <s className="MRP">₹{item.MRP}</s>
-              </div>
-              <button className="cart" onClick={() => onAddCartlist(item)}>
-                <FaShoppingCart />
-              </button>
-              <button className="wish" onClick={() => onAddWishlist(item)}>
-                <FaHeart />
-              </button>
+        data.map((item, index) => (
+          <div key={index} className="card proCard">
+            <img className="proImage" src={item.image} alt="Product Image" />
+            <div className="rating">
+              <FaStar className="activeStar" />
+              <FaStar className="activeStar" />
+              <FaStar className="activeStar" />
+              <FaStar className="activeStar" />
+              <FaStar className="inactiveStar" />
             </div>
-          );
-        })
+            <p className="proCompany">{item.Company}</p>
+            <p className="proTitle">{item.title}</p>
+            <div className="proPrice">
+              <sup>₹ </sup>
+              {item.Price} <s className="MRP">₹{item.MRP}</s>
+            </div>
+            <button className="cart" onClick={() => onAddCartlist(item)}>
+              <FaShoppingCart />
+            </button>
+            <button className="wish" onClick={() => onAddWishlist(item)}>
+              <FaHeart />
+            </button>
+          </div>
+        ))
       )}
     </div>
   );
