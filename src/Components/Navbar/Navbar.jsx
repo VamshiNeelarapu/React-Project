@@ -129,7 +129,7 @@ const Navbar = () => {
             to="/cart"
           >
             <FontAwesomeIcon icon={faCartShopping} />
-            {/* <div className="nav-cart-count">0</div> */}
+            {/* <div className="nav-cart-count">{user.data[0].cart.length}</div> */}
           </NavLink>
         </div>
       </div>

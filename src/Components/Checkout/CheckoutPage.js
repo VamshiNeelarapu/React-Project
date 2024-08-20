@@ -14,6 +14,7 @@ const CheckputPage = () => {
     const templateId = "template_uhv2s4x";
     try {
       await emailjs.send(serviceId, templateId, {
+        email: "suhasiniramavath@gmail.com",
         username: "Varun",
         price: "6000",
         id: "200010",
