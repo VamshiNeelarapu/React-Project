@@ -354,17 +354,6 @@
           "Description": "pink skirt, skirt, women, denim, zara"
         },
         {
-          "id": "15",
-          "image": "./assets/15 1.jpg",
-          "title": "Hand-Knitted Men's Shirt",
-          "MRP": "7899",
-          "Price": "5699",
-          "Category": "men",
-          "quantity": 1,
-          "Company": "Levis",
-          "Description": "men,shirt,Hand-knitted,levis"
-        },
-        {
           "id": "4",
           "image": "./assets/4 1.jpg",
           "title": "Brown bodycon dress ",
