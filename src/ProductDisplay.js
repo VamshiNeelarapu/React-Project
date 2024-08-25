@@ -7,6 +7,9 @@ import axios from "axios";
 import Wish from "./Components/Wish/Wish";
 
 function ProductDisplay() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [data, setProduct] = useState([]);
   const [value, setValue] = useState("");
   const [val, setCat] = useState("");

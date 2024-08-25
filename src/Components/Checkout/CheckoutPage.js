@@ -8,24 +8,24 @@ import emailjs from "@emailjs/browser";
 const CheckputPage = () => {
   useEffect(() => emailjs.init("mPFtXQc-UiuyL4x6x"), []);
 
+  const { isAuthenticated, user } = useContext(AuthContext);
+  const [name, setname] = useState([user.name]);
+  const [mail, setmail] = useState([user.email]);
+
   const sendEmail = async (e) => {
     // e.preventDefault();
     const serviceId = "service_2wyrr6e";
     const templateId = "template_uhv2s4x";
     try {
       await emailjs.send(serviceId, templateId, {
-        email: "suhasiniramavath@gmail.com",
-        username: "Varun",
-        price: "6000",
-        id: "200010",
+        email: "vamshineelarapu@gmail.com",
+        username: "Vamshi",
       });
-      alert("email successfully sent check inbox");
+      // alert("email successfully sent check inbox");
     } catch (error) {
       console.log(error);
     }
   };
-  const { isAuthenticated, user } = useContext(AuthContext);
-  const [name, setname] = useState([user.name]);
   const [paymentForm, setPaymentForm] = useState({
     cardNumber: "",
     expiryDate: "",
@@ -175,7 +175,7 @@ const CheckputPage = () => {
 
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               id="cvv"
               name="cvv"
               placeholder="CVV"

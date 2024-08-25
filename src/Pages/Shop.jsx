@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../Components/Hero/Hero";
 import Popular from "../Components/Popular/Popular";
 import Banner from "../Components/Banner/Banner";
@@ -10,6 +10,9 @@ import Trending from "../Components/HomePageSections/Trending";
 import SpecialOffers from "../Components/HomePageSections/SpecialOffers";
 
 const Shop = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const banner_popular = {
     position: "absolute",
     top: "20%",

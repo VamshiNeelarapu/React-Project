@@ -142,7 +142,6 @@ const Navbar = () => {
             to="/cart"
           >
             <FontAwesomeIcon icon={faCartShopping} />
-            <div className="nav-cart-count">{cartlen}</div>
           </NavLink>
         </div>
       </div>

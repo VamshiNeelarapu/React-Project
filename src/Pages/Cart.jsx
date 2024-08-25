@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CartPage from "../Components/Cart/CartPage";
 import AuthContext from "../Context/AuthContext";
 
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { isAuthenticated, user } = useContext(AuthContext);
   return (
     <div>

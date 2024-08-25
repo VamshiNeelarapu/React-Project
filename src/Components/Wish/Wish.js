@@ -133,9 +133,15 @@ function Wish() {
                 style={{ width: "18rem", margin: "10px" }}
                 key={post.id}
               >
-                <Card.Img variant="top" src={image} />
+                <Card.Img
+                  variant="top"
+                  src={image}
+                  style={{ height: "350px" }}
+                />
                 <Card.Body>
-                  <Card.Title className="wish-title">{title}</Card.Title>
+                  <Card.Title className="wish-title" style={{ height: "40px" }}>
+                    {title}
+                  </Card.Title>
                   <Card.Text>
                     {Company}
                     <br></br>

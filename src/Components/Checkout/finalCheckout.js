@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 const FinalCheckout = () => {
   useEffect(() => {
     toast.success("Confirmation mail sent!");
-  });
+  }, []);
   return (
     <div
       style={{

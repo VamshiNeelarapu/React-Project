@@ -95,7 +95,7 @@
     {
       "id": "1",
       "image": "./assets/1 1.jpg",
-      "title": "Women's belted open-back denim Halter",
+      "title": "Open-back denim Halter",
       "MRP": "5490",
       "Price": "4599",
       "Category": "women",
@@ -117,7 +117,7 @@
     {
       "id": "2",
       "image": "./assets/2 1.jpg",
-      "title": "Asymmetric Buttoned Denim Straight Skirt",
+      "title": "Denim Straight Skirt",
       "MRP": "4290",
       "Price": "3999",
       "Category": "women",
@@ -408,19 +408,7 @@
       "name": "Vamshi",
       "email": "vamshi@gmail.com",
       "password": "1491625",
-      "cart": [],
-      "wishlist": [
-        {
-          "id": "2",
-          "image": "./assets/2 1.jpg",
-          "title": "Asymmetric Buttoned Denim Straight Skirt",
-          "MRP": "4290",
-          "Price": "3999",
-          "Category": "women",
-          "quantity": 1,
-          "Company": "H&M",
-          "Description": "white skirt, women, denim, H&M"
-        },
+      "cart": [
         {
           "id": "1",
           "image": "./assets/1 1.jpg",
@@ -433,15 +421,61 @@
           "Description": "pink skirt, skirt, women, denim, zara"
         },
         {
-          "id": "4",
-          "image": "./assets/4 1.jpg",
-          "title": "Brown bodycon dress ",
-          "MRP": "6029",
-          "Price": "5899",
+          "id": "15",
+          "image": "./assets/15 1.jpg",
+          "title": "Hand-Knitted Men's Shirt",
+          "MRP": "7899",
+          "Price": "5699",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Levis",
+          "Description": "men,shirt,Hand-knitted,levis"
+        },
+        {
+          "id": "14",
+          "image": "./assets/14 1.jpg",
+          "title": "Men's Peach T-shirt",
+          "MRP": "4599",
+          "Price": "3999",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Levis",
+          "Description": "men, t-shirt, Peach,Levis"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "7",
+          "image": "./assets/7 1.jpg",
+          "title": "Black v-neck dress",
+          "MRP": "7899",
+          "Price": "6999",
           "Category": "women",
           "quantity": 1,
-          "Company": "H&M",
-          "Description": "women, bodycon, H&M "
+          "Company": "Zara",
+          "Description": "dress, women, zara"
+        },
+        {
+          "id": "13",
+          "image": "./assets/13 1.jpg",
+          "title": "T-shirt",
+          "MRP": "4899",
+          "Price": "4599",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Adidas",
+          "Description": "men,T-shirt,Adidas"
+        },
+        {
+          "id": "15",
+          "image": "./assets/15 1.jpg",
+          "title": "Hand-Knitted Men's Shirt",
+          "MRP": "7899",
+          "Price": "5699",
+          "Category": "men",
+          "quantity": 1,
+          "Company": "Levis",
+          "Description": "men,shirt,Hand-knitted,levis"
         }
       ]
     },
@@ -487,6 +521,38 @@
           "Description": "dress, women, zara"
         }
       ]
+    },
+    {
+      "id": "d6dc",
+      "name": "Vamshi",
+      "email": "vamshineelarapu@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": "c7d6",
+      "name": "Vamshi",
+      "email": "vamshineelarapu@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": "1a80",
+      "name": "vamshi",
+      "email": "vam@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": "f03f",
+      "name": "vamshi",
+      "email": "vam@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "wishlist": []
     }
   ]
 }

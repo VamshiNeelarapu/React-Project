@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AuthContext from "../Context/AuthContext";
 import Wish from "../Components/Wish/Wish";
 
 const Wishlist = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { isAuthenticated, user } = useContext(AuthContext);
   return (
     <div>

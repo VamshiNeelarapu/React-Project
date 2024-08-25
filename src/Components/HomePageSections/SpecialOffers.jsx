@@ -115,7 +115,7 @@ const SpecialOffers = () => {
               style={{ width: "18rem", margin: "10px" }}
               key={post.id}
             >
-              <Card.Img variant="top" src={image} />
+              <Card.Img variant="top" src={image} style={{ height: "350px" }} />
               <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
